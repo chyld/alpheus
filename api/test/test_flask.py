@@ -52,3 +52,12 @@ def test_find(clear):
     response = requests.get('http://localhost:5000/find/4')
     response = response.json()
     assert response['found'] == 'False'
+
+
+def test_delete(clear):
+    requests.get('http://localhost:5000/append/1')
+    requests.get('http://localhost:5000/append/2')
+    requests.get('http://localhost:5000/append/3')
+    response = requests.get('http://localhost:5000/delete/2')
+    response = response.json()
+    assert response['list'] == '1 -> 3'

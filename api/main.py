@@ -44,3 +44,9 @@ def reverse():
 def find(val):
     node = sll.find(val)
     return jsonify({'found': str(node is not None)})
+
+
+@app.route('/delete/<int:val>')
+def delete(val):
+    sll.delete(val)
+    return jsonify({'list': str(sll)})
