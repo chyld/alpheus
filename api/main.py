@@ -15,6 +15,12 @@ def status():
     return jsonify({'status': 'ok'})
 
 
+@app.route('/clear')
+def clear():
+    sll.clear()
+    return jsonify({'status': 'cleared'})
+
+
 @app.route('/append/<float:val>')
 def append(val):
     sll.append(val)
