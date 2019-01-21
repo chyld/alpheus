@@ -31,3 +31,10 @@ def append(val):
 def prepend(val):
     sll.prepend(val)
     return jsonify({'list': str(sll)})
+
+
+@app.route('/reverse')
+def reverse():
+    global sll
+    sll = sll.reverse()
+    return jsonify({'list': str(sll)})

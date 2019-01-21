@@ -32,3 +32,11 @@ def test_prepend(clear):
     response = requests.get('http://localhost:5000/prepend/2.71')
     response = response.json()
     assert response['list'] == '2.71 -> 3.14'
+
+
+def test_reverse(clear):
+    requests.get('http://localhost:5000/append/1.1')
+    requests.get('http://localhost:5000/append/2.2')
+    response = requests.get('http://localhost:5000/reverse')
+    response = response.json()
+    assert response['list'] == '2.2 -> 1.1'
