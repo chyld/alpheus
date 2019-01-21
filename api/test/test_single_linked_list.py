@@ -1,9 +1,10 @@
 # test watcher
 # chokidar "**/*.py" -c "clear && pytest -v -s"
 
-import pytest
 
-from src.single_linked_list import SingleLinkedList
+from api.models.single_linked_list import SingleLinkedList
+
+import pytest
 
 
 @pytest.fixture

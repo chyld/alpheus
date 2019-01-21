@@ -1,4 +1,4 @@
-from src.node import Node
+from api.models.node import Node
 
 
 def test_node():
