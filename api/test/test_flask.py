@@ -25,3 +25,10 @@ def test_append(clear):
     response = requests.get('http://localhost:5000/append/2.71')
     response = response.json()
     assert response['list'] == '3.14 -> 2.71'
+
+
+def test_prepend(clear):
+    requests.get('http://localhost:5000/prepend/3.14')
+    response = requests.get('http://localhost:5000/prepend/2.71')
+    response = response.json()
+    assert response['list'] == '2.71 -> 3.14'

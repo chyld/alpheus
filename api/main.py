@@ -25,3 +25,9 @@ def clear():
 def append(val):
     sll.append(val)
     return jsonify({'list': str(sll)})
+
+
+@app.route('/prepend/<float:val>')
+def prepend(val):
+    sll.prepend(val)
+    return jsonify({'list': str(sll)})
