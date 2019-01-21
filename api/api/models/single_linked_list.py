@@ -3,9 +3,7 @@ from .node import Node
 
 class SingleLinkedList:
     def __init__(self):
-        self.head = None
-        self.tail = None
-        self.size = 0
+        self._initialize()
 
     def is_empty(self):
         return self.head is None
@@ -83,6 +81,16 @@ class SingleLinkedList:
 
     def _delete_head(self):
         self.head = self.head.nxt
+        self.size -= 1
 
     def _delete_body(self, prev):
         prev.nxt = prev.nxt.nxt
+        self.size -= 1
+
+    def _initialize(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
+
+    def clear(self):
+        self._initialize()

@@ -7,8 +7,15 @@ from flask import Flask, jsonify
 
 
 app = Flask(__name__)
+sll = SingleLinkedList()
 
 
 @app.route('/status')
-def hello_world():
+def status():
     return jsonify({'status': 'ok'})
+
+
+@app.route('/append/<float:val>')
+def append(val):
+    sll.append(val)
+    return jsonify({'list': str(sll)})

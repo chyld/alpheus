@@ -63,3 +63,11 @@ def test_delete(sll):
     assert str(sll) == "7"
     sll.delete(7)
     assert str(sll) == ""
+
+
+def test_clear(sll):
+    assert str(sll) == "3 -> 5 -> 7"
+    assert len(sll) == 3
+    sll.clear()
+    assert str(sll) == ""
+    assert len(sll) == 0
