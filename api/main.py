@@ -21,13 +21,13 @@ def clear():
     return jsonify({'status': 'cleared'})
 
 
-@app.route('/append/<float:val>')
+@app.route('/append/<int:val>')
 def append(val):
     sll.append(val)
     return jsonify({'list': str(sll)})
 
 
-@app.route('/prepend/<float:val>')
+@app.route('/prepend/<int:val>')
 def prepend(val):
     sll.prepend(val)
     return jsonify({'list': str(sll)})
@@ -38,3 +38,9 @@ def reverse():
     global sll
     sll = sll.reverse()
     return jsonify({'list': str(sll)})
+
+
+@app.route('/find/<int:val>')
+def find(val):
+    node = sll.find(val)
+    return jsonify({'found': str(node is not None)})
