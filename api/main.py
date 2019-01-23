@@ -5,8 +5,10 @@ from api.models.single_linked_list import SingleLinkedList
 
 from flask import Flask, jsonify
 
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 sll = SingleLinkedList()
 
 
